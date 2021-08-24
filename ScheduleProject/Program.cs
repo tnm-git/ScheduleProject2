@@ -94,9 +94,9 @@ namespace ScheduleProject
             //DateTime input = DateTime.Parse("2000-01-01 00:00:00.000");
 
             // 7 nearest
-            string pattern = "*.*.* * *:*:*.1,2,3-5,10-20/3";
-            schedule = new Schedule(pattern);
-            DateTime input = DateTime.Parse("2020-12-31 23:59:59.020");
+            //string pattern = "*.*.* * *:*:*.1,2,3-5,10-20/3";
+            //schedule = new Schedule(pattern);
+            //DateTime input = DateTime.Parse("2020-12-31 23:59:59.020");
 
             // 9 nearest
             //string pattern = "*.*.* * */4:*:*";
@@ -119,9 +119,9 @@ namespace ScheduleProject
             //DateTime input = DateTime.Parse("2020-12-31 01:30:00.001");
 
             // 17 nearest
-            //string pattern = "*.*.32 12:00:00";
-            //schedule = new Schedule(pattern);
-            //DateTime input = DateTime.Parse("2020-01-31 12:00:00.001");
+            string pattern = "*.*.32 12:00:00";
+            schedule = new Schedule(pattern);
+            DateTime input = DateTime.Parse("2020-01-31 12:00:00.001");
 
             Console.WriteLine($"Patte = {pattern}");
             PrintResult(input);

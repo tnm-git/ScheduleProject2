@@ -281,20 +281,19 @@ namespace ScheduleProject.moment
             Moment nearestMoment = new Moment();
 
             bool overFlow = false;
-
             for (int idx = Count - 2; idx >= 0; idx--)
             {
                 if (overFlow)
                 {
                     MomentItem temp = new MomentItem(moment[idx]);
                     nearestMoment[idx].Val = searchers[idx].Nearest((++temp).Val);
+                    overFlow = true;
                 }
                 else
                 {
                     nearestMoment[idx].Val = searchers[idx].Nearest(moment[idx].Val);
+                    overFlow = false;
                 }
-
-                overFlow = false;
 
                 if (nearestMoment[idx].Val == -1)
                 {
@@ -305,7 +304,7 @@ namespace ScheduleProject.moment
                 if (nearestMoment[idx].Val != moment[idx].Val)
                 {
                     if (idx == Count - 2)
-                        continue;
+                        continue; 
 
                     for (int j = idx + 1; j < Count - 1; j++)
                     {
@@ -400,13 +399,13 @@ namespace ScheduleProject.moment
                 {
                     MomentItem temp = new MomentItem(moment[idx]);
                     nearestMoment[idx].Val = searchers[idx].NearestPrev((--temp).Val);
+                    overFlow = true;
                 }
                 else
                 {
                     nearestMoment[idx].Val = searchers[idx].NearestPrev(moment[idx].Val);
+                    overFlow = false;
                 }
-
-                overFlow = false;
 
                 if (nearestMoment[idx].Val == -1)
                 {

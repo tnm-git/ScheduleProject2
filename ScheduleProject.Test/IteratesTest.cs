@@ -3,10 +3,10 @@ using System.Globalization;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ScheduleProject.schedule;
 
-namespace ScheduleProject.UnitTests
+namespace ScheduleProject.Tests
 {
 	[TestClass]
-	public class UnitTest1
+	public class IteratesTest
 	{
 		[DataTestMethod]
 		[DataRow("2100.12.31 23:59:59.999", "2000-01-01 00:00:00.000", "2100-12-31 23:59:59.999")]//01 макс. количество итераций при проверке
@@ -71,4 +71,6 @@ namespace ScheduleProject.UnitTests
 			return dt;
 		}
 	}
+
+
 }
