@@ -43,5 +43,11 @@ namespace ScheduleProject.search
         /// <param name="val">Проверяемый момент</param>
         /// <returns>true - содержит, false - нет</returns>
         public bool Contains(int val);
+
+        /// <summary>
+        /// Получить число элементов коллекции поисковика
+        /// </summary>
+        /// <returns></returns>
+        public int GetCollectionCount();
     }
 }

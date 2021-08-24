@@ -42,6 +42,12 @@ namespace ScheduleProject.search
         }
 
         /// <summary>
+        /// Получить число элементов коллекции
+        /// </summary>
+        /// <returns>число элементов коллекции</returns>
+        public int GetCollectionCount() => binaryTree.Count;
+
+        /// <summary>
         /// Вставка элемента в дерево интервалов
         /// </summary>
         /// <param name="momentItemInterval">Интервал момента времени</param>

@@ -74,15 +74,46 @@ namespace ScheduleProject.search
         }
             
 
-        public int Nearest(int val) => Search.Nearest(val);
+        public int Nearest(int val)
+        {
+            if (Search.GetCollectionCount() == 0)
+                return Min;
 
-        public int NearestPrev(int val) => Search.NearestPrev(val);
+            return Search.Nearest(val);
+        }
+          
 
-        public int NearestToMin() => Search.Nearest(Min); 
+        public int NearestPrev(int val)
+        {
+            if (Search.GetCollectionCount() == 0)
+                return Max;
 
-        public int NearestToMax() => Search.NearestPrev(Max);
+            return Search.NearestPrev(val);
+        }
+            
+        public int NearestToMin()
+        {
+            if (Search.GetCollectionCount() == 0)
+                return Min;
 
-        public bool Find(int val) => Search.Contains(val);
+            return Search.Nearest(Min);
+        }
+
+        public int NearestToMax()
+        {
+            if (Search.GetCollectionCount() == 0)
+                return Max;
+
+            return Search.NearestPrev(Max);
+        }
+
+        public bool Find(int val)
+        {
+            if (Search.GetCollectionCount() == 0)
+                return false;
+
+            return Search.Contains(val);
+        }
 
     }
 }

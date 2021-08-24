@@ -18,6 +18,12 @@ namespace ScheduleProject.search
         }
 
         /// <summary>
+        /// Получить число элементов коллекции
+        /// </summary>
+        /// <returns>число элементов коллекции</returns>
+        public int GetCollectionCount() => Intervals.Count;
+
+        /// <summary>
         /// Вставка элемента в коллекцию интервалов моментов
         /// </summary>
         /// <param name="momentItemInterval">Интервал момента времени</param>
@@ -50,7 +56,7 @@ namespace ScheduleProject.search
             // в коллекции нет объектов
             if (Intervals.Count == 0)
             {
-                return true;
+                throw new System.Exception("Collection is empty");
             }
 
             foreach (var item in Intervals)
@@ -82,7 +88,7 @@ namespace ScheduleProject.search
             // в коллекции нет объектов
             if (Intervals.Count == 0) 
             {
-                return val;
+                throw new System.Exception("Collection is empty");
             }
 
             int diffMin = int.MaxValue;
