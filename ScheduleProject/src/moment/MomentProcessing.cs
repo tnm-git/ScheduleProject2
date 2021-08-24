@@ -152,7 +152,7 @@ namespace ScheduleProject.moment
         public DateTime Nearest(DateTime dateTime)
         {
             Moment input = Moment.ToMoment(dateTime);
-            return Moment.ToMomentTime(IterateUpWrapper(input));
+            return Moment.ToDateTime(IterateUpWrapper(input));
         }
 
         /// <summary>
@@ -163,7 +163,7 @@ namespace ScheduleProject.moment
         public DateTime NearestPrev(DateTime dateTime)
         {
             Moment input = Moment.ToMoment(dateTime);
-            return Moment.ToMomentTime(IterateDownWrapper(input));
+            return Moment.ToDateTime(IterateDownWrapper(input));
         }
 
         /// <summary>
@@ -177,15 +177,15 @@ namespace ScheduleProject.moment
             Moment nearest = IterateUpWrapper(input);
 
             if (nearest != input || nearest == Moment.MaxValue)
-                return Moment.ToMomentTime(nearest);
+                return Moment.ToDateTime(nearest);
 
             Moment temp = new Moment(input);
             Moment next = IterateUpWrapper(++temp);
 
             if (input == next)
-                return Moment.ToMomentTime(Moment.MaxValue);
+                return Moment.ToDateTime(Moment.MaxValue);
 
-            return Moment.ToMomentTime(next);
+            return Moment.ToDateTime(next);
         }
 
         /// <summary>
@@ -199,15 +199,15 @@ namespace ScheduleProject.moment
             Moment nearest = IterateDownWrapper(input);
 
             if (nearest != input || nearest == Moment.MaxValue)
-                return Moment.ToMomentTime(nearest);
+                return Moment.ToDateTime(nearest);
 
             Moment temp = new Moment(input); 
             Moment next = IterateDownWrapper(--temp);
 
             if (input == next)
-                return Moment.ToMomentTime(Moment.MaxValue);
+                return Moment.ToDateTime(Moment.MaxValue);
 
-            return Moment.ToMomentTime(next);
+            return Moment.ToDateTime(next);
         }
 
         /// <summary>

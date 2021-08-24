@@ -91,7 +91,7 @@ namespace ScheduleProject.moment
         }
 
 
-        public static DateTime ToMomentTime(Moment d)
+        public static DateTime ToDateTime(Moment d)
         {
             return new DateTime(d.momentItems[0].Val, d.momentItems[1].Val, 
                 d.momentItems[2].Val, d.momentItems[3].Val, 
